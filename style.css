@@ -1,12 +1,17 @@
-body{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Patrick Hand', cursive;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
 }
 
-/* ------------------------------------------------------------------------- */
-/* Navbar css starts here */
-/* Existing CSS */
+/* Navbar CSS */
 header {
   z-index: 1000;
   position: fixed;
@@ -64,45 +69,44 @@ header {
   transition: 0.4s;
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
+  .navBar {
+    height: 70px;
+  }
   .menu {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 70px;
-      right: 20px;
-      background-color: white;
-      border: 1px solid #695aa6;
-      border-radius: 8px;
-      padding: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #695aa6;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    max-height: 300px;
+    overflow-y: auto;
   }
-
   .menu ul {
-      flex-direction: column;
-      padding: 0;
-      margin: 0;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
   }
-
   .menu ul li {
-      margin: 10px 0;
+    margin: 10px 0;
   }
-
   .menu ul li a {
-      color: #695aa6;
+    color: #695aa6;
   }
-
   .menu-toggle {
-      display: flex;
+    display: flex;
   }
-
   .navBar.bgColor .menu {
-      background-color: white;
+    background-color: white;
   }
-
   .navBar.bgColor .menu-toggle .bar {
-      background-color: #695aa6;
+    background-color: #695aa6;
   }
 }
 
@@ -110,38 +114,34 @@ header {
   display: flex;
 }
 
-/* New CSS */
 .header-scrolled {
-  background-color: #fff; /* Change header background when scrolled */
+  background-color: #fff;
 }
 
 .header-scrolled .name h1,
 .header-scrolled .menu ul li a,
 .header-scrolled .menu ul li {
-  color: #695aa6; /* Change name color when scrolled */
+  color: #695aa6;
 }
 
 .header-scrolled .menu-toggle .bar {
-  background-color: #695aa6; /* Change toggle button color when header is scrolled */
+  background-color: #695aa6;
 }
 
-/* Navbar CSS ends here  */
-/* ------------------------------------------------------------------------------------- */
-/* hero section CSS starts here  */
-
-.hero{
+/* Hero Section CSS */
+.hero {
   position: relative;
   background-image: url('images/header.jpg');
   background-position: top;
   background-size: cover;
-  height: 90vh;
+  min-height: 90vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-    
 }
 
-.hero-container{
+.hero-container {
   z-index: 100;
   display: flex;
   flex-direction: column;
@@ -149,27 +149,27 @@ header {
   align-items: start;
 }
 
-.hero-container .up{
+.hero-container .up {
   font-size: 50px;
   color: #212529;
   font-family: Leckerli One, sans-serif;
   margin-bottom: 5px;
 }
 
-.hero-container p{
+.hero-container p {
   margin: 0;
   padding: 0;
   float: left;
 }
 
-.hero-container .down{
+.hero-container .down {
   font-size: 60px;
   color: #212529;
   font-family: Leckerli One, sans-serif;
   margin-bottom: 5px;
 }
 
-.hero-container h1{
+.hero-container h1 {
   margin: 0;
   color: #212529;
   font-family: Patrick Hand, cursive;
@@ -177,7 +177,7 @@ header {
   margin-bottom: 20px;
 }
 
-.over{
+.over {
   position: absolute;
   top: 0;
   left: 0;
@@ -186,34 +186,37 @@ header {
   background-image: linear-gradient(to top, #fff 0%, rgba(105, 90, 166, 0.35) 99%, rgba(105, 90, 166, 0.5) 100%);
 }
 
-.hero-container .botton a{
+.hero-container .botton a {
   text-decoration: none;
-  color:#695aa6;
+  color: #695aa6;
 }
 
-.hero-container .botton img{
+.hero-container .botton img {
   width: 30px;
   height: 30px;
   margin-right: 10px;
 }
 
 @media (max-width: 768px) {
-  .hero{
-    height: 80vh;
+  .hero {
+    min-height: 60vh;
+    height: auto;
+    padding: 20px;
   }
-
+  .hero-container {
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
   .hero-container .up {
     font-size: 35px;
   }
-
   .hero-container .down {
     font-size: 45px;
   }
-
   .hero-container h1 {
     font-size: 25px;
   }
-
   .hero-container .botton img {
     width: 25px;
     height: 25px;
@@ -222,40 +225,38 @@ header {
 }
 
 @media (max-width: 480px) {
-  .hero{
-    height: 80vh;
+  .hero {
+    min-height: 50vh;
+    height: auto;
+    padding: 15px;
   }
-
-  .hero-container .up {
+  .hero-container .up d {
     font-size: 25px;
   }
-
   .hero-container .down {
     font-size: 35px;
   }
-
   .hero-container h1 {
     font-size: 20px;
   }
-
   .hero-container .botton img {
     width: 20px;
     height: 20px;
     margin-right: 5px;
   }
 }
-/* hero section CSS end here  */
-/* -------------------------------------------------------------------------- */
-/* about section CSS starts here  */
-.about{
+
+/* About Section CSS */
+.about {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  min-height: 70vh;
+  height: auto;
   padding: 40px;
 }
 
-.about-container{
+.about-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -263,35 +264,36 @@ header {
   max-width: 1200px;
 }
 
-.imgeffect, .text{
-  height: 400px;
+.imgeffect, .text {
+  height: auto;
 }
 
-.text{
+.text {
   width: 650px;
   margin-left: 100px;
 }
 
-.text h2, .text p{
+.text h2, .text p {
   margin: 0;
   padding: 0;
 }
 
-.text .p1{
+.text .p1 {
   font-family: Patrick Hand, cursive;
   margin-bottom: 6px;
 }
 
-.text .p2{
+.text .p2 {
   font-family: Patrick Hand, cursive;
   margin-bottom: 16px;
 }
 
-.text h2{
+.text h2 {
   font-family: Leckerli One, sans-serif;
   margin-bottom: 16px;
 }
-.text button{
+
+.text button {
   width: 125px;
   height: 37px;
   padding: 6px 12px;
@@ -303,48 +305,48 @@ header {
   font-size: 17px;
 }
 
-.imgeffect img{
-  width: 400px;
-  height: 400px;
+.imgeffect img {
+  width: 300px;
+  height: 300px;
   border-radius: 10px;
 }
 
 @media (max-width: 768px) {
-  .about{
-    height: 80vh;
+  .about {
+    min-height: 60vh;
+    height: auto;
     padding: 20px;
   }
   .about-container {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .text {
     width: 100%;
     margin-left: 0;
   }
-
   .text button {
     width: 100%;
     max-width: 150px;
   }
+  .imgeffect img {
+    width: 100%;
+    max-width: 300px;
+  }
 }
-
 
 @media (max-width: 480px) {
   .about {
-    height: 100vh;
-    padding: 20px;
+    min-height: 50vh;
+    height: auto;
+    padding: 10px;
   }
-
   .text .p1, .text .p2 {
     font-size: 14px;
   }
-
   .text h2 {
     font-size: 24px;
   }
-
   .text button {
     width: 100%;
     max-width: 125px;
@@ -352,17 +354,15 @@ header {
   }
 }
 
-/* about section CSS ends here */
-/* -------------------------------------------------------------- */
-/* skills section CSS starts here  */
-.Skills{
+/* Skills Section CSS */
+.Skills {
   display: block;
   width: 100%;
   margin-bottom: 30px;
   background-color: #f9f9f9;
 }
 
-.Skills .container{
+.Skills .container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -370,7 +370,7 @@ header {
   align-items: center;
 }
 
-.Skills .container .heading{
+.Skills .container .heading {
   font-size: 20px;
   text-align: center;
   font-family: Leckerli One, sans-serif;
@@ -380,25 +380,25 @@ header {
   margin-bottom: 25px;
 }
 
-.skillh1{
+.skillh1 {
   color: black;
 }
 
-.Skills .container .heading h1{
-  padding: 0%;
-  margin: 0%;
+.Skills .container .heading h1 {
+  padding: 0;
+  margin: 0;
 }
 
-.Skills .container .mainSkill{
+.Skills .container .mainSkill {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   margin-top: 30px;
-  gap: 30px;
+  gap: 15px;
   justify-content: center;
 }
 
-.Skills .container .mainSkill .front , .back , .datasci, .tools{
+.Skills .container .mainSkill .front, .back, .datasci, .tools {
   width: 100%;
   max-width: 500px;
   background: transparent;
@@ -407,9 +407,9 @@ header {
   padding: 18px 36px;
 }
 
-.Skills .container .mainSkill .front h2, .back h2, .datasci h2, .tools h2{
-  margin: 0%;
-  padding: 0%;
+.Skills .container .mainSkill .front h2, .back h2, .datasci h2, .tools h2 {
+  margin: 0;
+  padding: 0;
   font-size: 20px;
   font-family: Patrick Hand, cursive;
   font-weight: 600;
@@ -418,7 +418,7 @@ header {
   text-align: center;
 }
 
-.Skills .container .mainSkill .box{
+.Skills .container .mainSkill .box {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -426,7 +426,7 @@ header {
   margin-bottom: 20px;
 }
 
-.Skills .container .mainSkill .front .frontSkill, .back .backSkill, .datasci .datasciSkill, .tools .toolsSkill{
+.Skills .container .mainSkill .front .frontSkill, .back .backSkill, .datasci .datasciSkill, .tools .toolsSkill {
   font-size: 14px;
   font-weight: 400;
   font-family: Patrick Hand, cursive;
@@ -440,43 +440,32 @@ header {
   gap: 8px;
 }
 
-.Skills .container .mainSkill .front .box img{
-  width: 30px;
-  height: 30px;
-}
-
-.Skills .container .mainSkill .back .box img{
-  width: 30px;
-  height: 30px;
-}
-
-.Skills .container .mainSkill .datasci .box img{
-  width: 30px;
-  height: 30px;
-}
-
-.Skills .container .mainSkill .tools .box img{
+.Skills .container .mainSkill .front .box img,
+.Skills .container .mainSkill .back .box img,
+.Skills .container .mainSkill .datasci .box img,
+.Skills .container .mainSkill .tools .box img {
   width: 30px;
   height: 30px;
 }
 
 @media (max-width: 768px) {
-  .Skills{
-    margin-top: 80px;
+  .Skills {
+    margin-top: 20px;
   }
   .Skills .container .heading {
     font-size: 18px;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 20px;
   }
-
+  .Skills .container .mainSkill {
+    gap: 10px;
+  }
   .Skills .container .mainSkill .front,
   .back,
   .datasci,
   .tools {
-    padding: 14px 28px;
+    padding: 10px 20px;
   }
-
   .Skills .container .mainSkill .front h2,
   .back h2,
   .datasci h2,
@@ -484,7 +473,6 @@ header {
     font-size: 18px;
     margin-bottom: 16px;
   }
-
   .Skills .container .mainSkill .front .frontSkill,
   .back .backSkill,
   .datasci .datasciSkill,
@@ -492,11 +480,9 @@ header {
     font-size: 12px;
     padding: 10px 14px;
   }
-
   .Skills .container .mainSkill .box {
     gap: 10px;
   }
-
   .Skills .container .mainSkill .front .box img,
   .Skills .container .mainSkill .back .box img,
   .Skills .container .mainSkill .datasci .box img,
@@ -509,17 +495,15 @@ header {
 @media (max-width: 480px) {
   .Skills .container .heading {
     font-size: 16px;
-    margin-top: 80px;
+    margin-top: 10px;
     margin-bottom: 15px;
   }
-
   .Skills .container .mainSkill .front,
   .back,
   .datasci,
   .tools {
     padding: 10px 20px;
   }
-
   .Skills .container .mainSkill .front h2,
   .back h2,
   .datasci h2,
@@ -527,7 +511,6 @@ header {
     font-size: 16px;
     margin-bottom: 12px;
   }
-
   .Skills .container .mainSkill .front .frontSkill,
   .back .backSkill,
   .datasci .datasciSkill,
@@ -535,11 +518,9 @@ header {
     font-size: 10px;
     padding: 8px 12px;
   }
-
   .Skills .container .mainSkill .box {
     gap: 8px;
   }
-
   .Skills .container .mainSkill .front .box img,
   .Skills .container .mainSkill .back .box img,
   .Skills .container .mainSkill .datasci .box img,
@@ -549,20 +530,15 @@ header {
   }
 }
 
-/* skills section CSS ends here  */
-/* ------------------------------------------------------------------------------- */
-/* experience section CSS starts here  */
+/* Experience Section CSS */
 .expirience {
   margin: 0;
-  padding: 30px 0;
+  padding: 20px 0;
   font-family: 'Roboto', sans-serif;
   background: #F1F2F6;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   outline: none;
 }
-
 
 h1 {
   text-align: center;
@@ -577,8 +553,8 @@ h1 span {
 
 .container-ex {
   width: 80%;
-  padding: 50px 0;
-  margin: 50px auto;
+  padding: 20px 0;
+  margin: 20px auto;
   position: relative;
   overflow: hidden;
 }
@@ -592,20 +568,12 @@ h1 span {
   width: 2px;
   height: 100%;
   background: #CCD1D9;
-  z-index: 1
+  z-index: 1;
 }
 
 .timeline-block {
-  width: -webkit-calc(50% + 8px);
-  width: -moz-calc(50% + 8px);
   width: calc(50% + 8px);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -moz-box-pack: justify;
   justify-content: space-between;
   clear: both;
 }
@@ -616,7 +584,7 @@ h1 span {
 
 .timeline-block-left {
   float: left;
-  direction: rtl
+  direction: rtl;
 }
 
 .marker {
@@ -626,14 +594,14 @@ h1 span {
   border: 2px solid #F5F7FA;
   background: #695aa6;
   margin-top: 10px;
-  z-index: 9999
+  z-index: 9999;
 }
 
 .timeline-content {
   width: 95%;
   padding: 0 15px;
   color: #666;
-  margin-bottom:25px ;
+  margin-bottom: 15px;
 }
 
 .timeline-content h3 {
@@ -656,32 +624,29 @@ h1 span {
   color: #888;
 }
 
-
 @media screen and (max-width: 768px) {
   .container-ex:before {
-     left: 8px;
-     width: 2px;
+    left: 8px;
+    width: 2px;
   }
   .timeline-block {
-     width: 100%;
-     margin-bottom: 30px;
+    width: 100%;
+    margin-bottom: 20px;
   }
   .timeline-block-right {
-     float: none;
+    float: none;
   }
-
   .timeline-block-left {
-     float: none;
-     direction: ltr;
+    float: none;
+    direction: ltr;
   }
 }
- /* experience section CSS ends hhere */
-/* ---------------------------------------------------------------------- */
-/* project section CSS starts here  */
+
+/* Projects Section CSS */
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
 }
 
 .header {
@@ -704,7 +669,7 @@ h1 span {
 }
 
 .projects-section {
-  padding: 40px 0;
+  padding: 20px 0;
   background-color: #FFFFFF;
   border-top: 2px solid #000000;
 }
@@ -748,69 +713,57 @@ h1 span {
   line-height: 1.5;
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
   .container {
-      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-      gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1.5rem;
   }
-
   .card-inner {
-      height: 15rem;
+    height: 15rem;
   }
-
   .card .content h3 {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
-
   .card .content p {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
   .main h2 {
-      font-size: 20px;
+    font-size: 20px;
   }
-
   .container {
-      grid-template-columns: 1fr;
-      gap: 1rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
-
   .card-inner {
-      height: 12rem;
+    height: 12rem;
   }
-
   .card .content h3 {
-      font-size: 1.2rem;
+    font-size: 1.2rem;
   }
-
   .card .content p {
-      font-size: 0.8rem;
+    font-size: 0.8rem;
   }
-
   .card ul li {
-      font-size: 0.7rem;
-      padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
   }
 }
 
-
-/* project section CSS ends here  */
-/* --------------------------------------------------------------------- */
-/* Blogs section CSS starts here  */
-
+/* Blogs Section CSS */
 .blogs {
   display: flex;
   flex-direction: column;
-  height: 50vh;
+  min-height: 40vh;
+  height: auto;
   align-items: center;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
-  
-.blogs .tit{
+
+.blogs .tit {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -818,12 +771,12 @@ h1 span {
   margin-bottom: 20px;
 }
 
-.blogs .tit h1{
+.blogs .tit h1 {
   font-size: 30px;
   font-family: Leckerli One, sans-serif;
 }
 
-.blogs .con{
+.blogs .con {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -840,18 +793,18 @@ h1 span {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 300ms;
 }
-  
+
 .article-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
-  
+
 .article-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-  
+
 .article-card .content {
   box-sizing: border-box;
   width: 100%;
@@ -864,41 +817,47 @@ h1 span {
 
 .article-card .title {
   margin: 0;
-}
-
-.article-card .title {
   font-size: 17px;
   color: #212529;
 }
-  
+
 .article-card .btn {
-    padding: 3px;
-    margin: 5px;
-    margin-right: 0;
-    margin-bottom: 0;
-    border: 1px solid black;
-    border-radius: 5px;
-    background: transparent;
-    color: #212529;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 300ms;
-}
-/* blogs section CSS ends here */
-/* ---------------------------------------------------------------------------- */
-/* contact section CSS starts here  */
-body {
-  font-family: 'Patrick Hand', cursive;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  padding: 3px;
+  margin: 5px;
+  margin-right: 0;
+  margin-bottom: 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: transparent;
+  color: #212529;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 300ms;
 }
 
+@media (max-width: 768px) {
+  .blogs {
+    min-height: 30vh;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  .blogs .con {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-card {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+/* Contact Section CSS */
 .contact {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 20px;
   background-color: #f9f9f9;
 }
 
@@ -914,7 +873,7 @@ body {
 
 .contact-info {
   flex: 1;
-  padding: 40px;
+  padding: 20px;
   background-color: #695aa6;
   color: white;
 }
@@ -942,11 +901,11 @@ body {
 
 .contact-form {
   flex: 2;
-  padding: 40px;
+  padding: 15px;
 }
 
 .contact-form form {
-  display: flex;
+  display display: flex;
   flex-direction: column;
 }
 
@@ -976,22 +935,19 @@ body {
   background-color: #543d8d;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
   }
-
   .contact-info {
     text-align: center;
+    padding: 15px;
   }
-
   .social-links {
     justify-content: center;
   }
-
   .contact-form {
-    padding: 20px;
+    padding: 10px;
   }
 }
 
@@ -999,10 +955,8 @@ body {
   .contact-info p {
     margin: 5px 0;
   }
-
   .contact-form input,
   .contact-form textarea {
     width: 100%;
   }
 }
-/* contact section CSS ends here  */
